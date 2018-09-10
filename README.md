@@ -38,10 +38,11 @@ This application needs to be registered on the [Microsoft Application Registrati
 1. Sign in to the Microsoft Application Registration Portal with your Microsoft account credentials
 2. In the upper-right corner, select __Add an app__
 3. Provide a Name for your application and click __Create__
-4. On the registration page, copy the value of _Application Id_. You use it to configure your Microsoft account as an identity provider in your tenant.
+4. On the registration page, copy the value of _Application Id_. You will use it to configure your Microsoft account as an identity provider in your tenant.
 5. Select __Add platform__, and then and choose __Web__.
 6. Enter _`https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp`_ in Redirect URLs. Replace _{tenant}_ with your tenant's name (for example, contosob2c).
 7. Select __Generate New Password__ under __Application Secrets__. Copy the new password displayed on screen. You need it to configure a Microsoft account as an identity provider in your tenant. This password is an important security credential.
+8. Press __Save__
 
 #### Configure Azure AD B2C to work with Microsoft Accounts
 Back on the Azure Portal, make sure you're using the directory that contains your Azure AD B2C tenant by switching to it in the top-right corner of the Azure portal. Select your subscription information, and then select Switch Directory.
