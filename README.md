@@ -31,6 +31,7 @@ An Azure AD B2C needs to be created to authenticate to the application (this wil
 3. Select __Create a new Azure AD B2C Tenant__
 4. Select an organization name and an initial domain – make a note of those values
 5. Set the country to __United Kingdom__
+6. Press __Create__
 
 #### Register in the Microsoft Application Registration Portal
 This application needs to be registered on the [Microsoft Application Registration Portal](https://apps.dev.microsoft.com/), that you can access with your Microsoft account
