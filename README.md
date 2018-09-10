@@ -15,8 +15,11 @@ You’ll also need:
 -	A __Microsoft account__ (if you don’t have one, you can get it at https://live.com)
 - A __Docker Account__ (you can register for one when downloading docker - see above)
 
+---
 ## SETTING THINGS UP
-The initial steps are creating the necessary resources on your Azure subscription to allow for the application to run in its monolithic form and obtain the app from GitHub. 
+
+The initial steps are creating the necessary resources on your Azure subscription to allow for the application to run in its monolithic form and obtain the app from GitHub.
+
 ### ON YOUR AZURE SUBSCRIPTION
 You’ll need to access your azure subscription and:
 #### Azure AD B2C
@@ -34,23 +37,25 @@ This application needs to be registered on the [Microsoft Application Registrati
 3. Provide a Name for your application and click __Create__
 4. On the registration page, copy the value of _Application Id_. You use it to configure your Microsoft account as an identity provider in your tenant.
 5. Select __Add platform__, and then and choose __Web__.
-6. Enter _"`https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp`"_ in Redirect URLs. Replace _{tenant}_ with your tenant's name (for example, contosob2c).
+6. Enter _`https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp`_ in Redirect URLs. Replace _{tenant}_ with your tenant's name (for example, contosob2c).
 7. Select __Generate New Password__ under __Application Secrets__. Copy the new password displayed on screen. You need it to configure a Microsoft account as an identity provider in your tenant. This password is an important security credential.
 
 #### Configure Azure AD B2C to work with Microsoft Accounts
 Back on the Azure Portal, make sure you're using the directory that contains your Azure AD B2C tenant by switching to it in the top-right corner of the Azure portal. Select your subscription information, and then select Switch Directory.
 1.	Choose __All services__ in the top-left corner of the Azure portal, search for and select __Azure AD B2C__.
 2.	Select __Identity providers__, and then select __Add__.
-3.	Provide a Name. For example, enter _"`MSA`"_.
+3.	Provide a Name. For example, enter _`MSA`_.
 4.	Select __Identity provider type__, select __Microsoft Account__, and click __OK__.
-5.	Select __Set up this identity provider__ and enter the _"`<Application Id>`"_ that you recorded earlier as the __Client ID__ and enter the password that you recorded as the __Client secret__ of the Microsoft account application that you created earlier.
+5.	Select __Set up this identity provider__ and enter the _`<Application Id>`_ that you recorded earlier as the __Client ID__ and enter the password that you recorded as the __Client secret__ of the Microsoft account application that you created earlier.
 6.	Click __OK__ and then click __Create__ to save your Microsoft account configuration.
-7.	Press __Applications__ and select __+ Add__. Give it a name and set __Web App/WebApi__ to __Yes__. Set __Allow Implicit Flow__ to __Yes__. Type _"`https://localhost`"_ as the __Reply Url__
+7.	Press __Applications__ and select __+ Add__. Give it a name and set __Web App/WebApi__ to __Yes__. Set __Allow Implicit Flow__ to __Yes__. Type _`https://localhost`_ as the __Reply Url__
 8.	Once the application is created on Azure AD B2C, select it and add the following __Reply URLs__:
-  - `https://localhost:44391/signin/b2c_1_edit_profile`
-  - `https://localhost:44391/signin/b2c_1_sign_up_in`
-  - `https://localhost:44391/signin/b2c_1_sign_in`
-  - `https://localhost:44391/signin/b2c_1_sign_up`
+
+    - `https://localhost:44391/signin/b2c_1_edit_profile`
+    - `https://localhost:44391/signin/b2c_1_sign_up_in`
+    - `https://localhost:44391/signin/b2c_1_sign_in`
+    - `https://localhost:44391/signin/b2c_1_sign_up`
+  
 9.	Press __Save__
 10.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up_in`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
 11.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_edit_profile`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
@@ -83,8 +88,8 @@ Create a Resource Group
 5. Give it a name, select _“SQL”_ as the __API__, select the subscription, and under Resource Group, select __“Use existing”__ and on the drop down, select the resource group that was created previously. Don’t forget to set the Location to the appropriate value 
 6. Press __Create__ to create the Azure Cosmos DB
 7. Once the instance is created, press Keys and make a note of:
- - URI
- - PrimaryKey
+   - URI
+   - PrimaryKey
 8. Press __Data Explorer__ and select __New Database__. Type a name and make a note of it as you will need it later.
 9. Click __...__ that shows up when you move the mouse over the newly created database and select New Collection. Type _`events`_ in the __Collection Id__ field, leave all other values as they are and press __OK__. This Collection needs to be populated with some data, so expand the _“events”_ collection, and
   - Press New Document, type
@@ -159,7 +164,7 @@ And press __Save__
 #### Creating the KeyVault
 Finally, lets create the Key Vault
 1. On the resource group blade, press __+ Add__ again
-2. On the search box that shows up, type _`Azure Key Vault`_ (without the quotes)
+2. On the search box that shows up, type _`Azure Key Vault`_
 3. Select __Azure Key Vault__, from Microsoft 
 4. Press __Create__ on the new blade
 5. Give it a name, select the subscription and under Resource Group, select __Use existing__ and on the drop down, select the resource group that was created previously. Don’t forget to set the Location to the appropriate value, but you can leave the other options with the defaults
@@ -175,7 +180,7 @@ With this, the Azure setup is done for now.
 ### ON YOUR WORKSTATION
 You will need to obtain the source code from Git Hub. 
 Here’s how to do it:
-1. Press the __Windows__ key, and type _`cmd`_ (without the quotes)
+1. Press the __Windows__ key, and type _`cmd`_
 2. Type _`cd\`_ to navigate to the root of your hard drive
 3. Type _`md Code`_ to create a folder with the name _“Code”_
 4. Type _`cd Code`_ to navigate to the newly created folder
