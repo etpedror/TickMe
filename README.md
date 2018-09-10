@@ -26,7 +26,7 @@ The initial steps are creating the necessary resources on your Azure subscriptio
 You’ll need to access your azure subscription and:
 #### Azure AD B2C
 An Azure AD B2C needs to be created to authenticate to the application (this will allow users to authenticate with their Microsoft accounts, Facebook, Google, etc.)
-1. Press __+ Create a resource__ and type _“Azure Active Directory B2C”_ (without quotes) in the search box on the new blade and press Enter.
+1. Press __+ Create a resource__ and type _`Azure Active Directory B2C`_ in the search box on the new blade and press Enter.
 2. Press __Create__
 3. Select __Create a new Azure AD B2C Tenant__
 4. Select an organization name and an initial domain – make a note of those values
