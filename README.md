@@ -47,10 +47,10 @@ Back on the Azure Portal, make sure you're using the directory that contains you
 6.	Click __OK__ and then click __Create__ to save your Microsoft account configuration.
 7.	Press __Applications__ and select __+ Add__. Give it a name and set __Web App/WebApi__ to __Yes__. Set __Allow Implicit Flow__ to __Yes__. Type _"https://localhost"_ as the __Reply Url__
 8.	Once the application is created on Azure AD B2C, select it and add the following __Reply URLs__:
-  - https://localhost:44391/signin/b2c_1_edit_profile
-  - https://localhost:44391/signin/b2c_1_sign_up_in
-  - https://localhost:44391/signin/b2c_1_sign_in
-  - https://localhost:44391/signin/b2c_1_sign_up
+  - `https://localhost:44391/signin/b2c_1_edit_profile`
+  - `https://localhost:44391/signin/b2c_1_sign_up_in`
+  - `https://localhost:44391/signin/b2c_1_sign_in`
+  - `https://localhost:44391/signin/b2c_1_sign_up`
 9.	Press __Save__
 10.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _“B2C_1_sign_up_in”_, select the application that you just created, set the __Reply url__ to _“https://localhost:44391/signin/b2c_1_sign_up_in”_, set the domain to _“login.microsoftonline.com”_ and press __Create__
 11.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _“B2C_1_sign_up_in”_, select the application that you just created, set the __Reply url__ to _“https://localhost:44391/signin/b2c_1_edit_profile”_, set the domain to _“login.microsoftonline.com”_ and press __Create__
@@ -85,4 +85,73 @@ Create a Resource Group
 7. Once the instance is created, press Keys and make a note of:
  - URI
  - PrimaryKey
-8. Press Data Explorer and select “New Database”. Type a name and make a note of it as you will need it later.
+8. Press __Data Explorer__ and select __New Database__. Type a name and make a note of it as you will need it later.
+9. Click __...__ that shows up when you move the mouse over the newly created database and select New Collection. Type _“events”_ (without quotes) in the __Collection Id__ field, leave all other values as they are and press __OK__. This Collection needs to be populated with some data, so expand the “events” collection, and
+  - Press New Document, type
+```json
+{
+    "id": "fded6e77-8e72-401a-bbf9-7953f5faa374",
+    "title": "Kings of Leon Live",
+    "startdate": "2018-08-28T20:00:00Z",
+    "duration": "02:00:00",
+    "venue": "O2 Arena",
+    "price": 50,
+    "totalavailabletickets": 1000
+}
+```
+And press __Save__
+  - Press New Document, type
+```json
+{
+    "id": "e185a588-9fae-4be5-8bb7-d9dfeed6e99b",
+    "title": "The Killers Live",
+    "startdate": "2018-09-28T20:30:00.000000Z",
+    "duration": "02:00:00",
+    "venue": "O2 Arena",
+    "price": 45,
+    "totalavailabletickets": 1000
+}
+```
+And press __Save__
+  - Press New Document, type
+```json
+{
+    "id": "2e6010f5-ef3f-4c21-98c5-9fb92781281e",
+    "title": "Pearl Jam",
+    "startdate": "2018-08-31T20:00:00.000000Z",
+    "duration": "03:00:00",
+    "venue": "Wembley",
+    "price": 50,
+    "totalavailabletickets": 10000
+}
+```
+And press __Save__
+  - Press New Document, type
+```json
+{
+    "id": "dbba999c-bec8-497b-a08b-f3bd2b0aff96",
+    "title": "Reading Festival",
+    "startdate": "2019-08-25T00:00:00.000000Z",
+    "duration": "23:59:00",
+    "venue": "Reading Festival Grounds",
+    "price": 75,
+    "totalavailabletickets": 65000
+}
+```
+And press __Save__
+  - Press New Document, type
+```json
+{
+    "id": "c83333e4-ad45-435c-a28b-f4bf227698bd",
+    "title": "NOS Alive",
+    "startdate": "2019-07-11T14:00:00.000000Z",
+    "duration": "10:00:00",
+    "venue": "Lisbon, Portugal",
+    "price": 50,
+    "totalavailabletickets": 100000
+}
+```
+And press __Save__
+
+10.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _“user”_ (without quotes) in the __Collection Id__ field, leave all other values as they are and press __OK__
+11.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _“tickets”_ (without quotes) in the __Collection Id__ field, leave all other values as they are and press __OK__
