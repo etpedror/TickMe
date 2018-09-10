@@ -67,7 +67,9 @@ Back on the Azure Portal, make sure you're using the directory that contains you
 15.	Create a user that will allow you to test your application
 
 #### Register your Application with Azure AD
+
 If you switched to another directory on the previous step, repeat the steps to get to the initial directory again
+
 We need to register the application with Azure AD in order for the application to be able to access the resources
 1. On the main search box type _`Azure Active Directory`_ and select the option under __Services__
 2. Press __App Registrations__ and select __+ New application registration__ on the options
