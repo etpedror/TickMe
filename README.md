@@ -96,7 +96,7 @@ Create a Resource Group
 7. Once the instance is created, press Keys and make a note of:
    - URI
    - PrimaryKey
-8. Press __Data Explorer__ and select __New Database__. Type a name and make a note of it as you will need it later.
+8. Press __Data Explorer__ and select __New Database__. Type _`tickme`_ and make a note of it as you will need it later.
 9. Click __...__ that shows up when you move the mouse over the newly created database and select New Collection. Type _`events`_ in the __Collection Id__ field, make sure you select __Fixed Size__ and press __OK__. This Collection needs to be populated with some data, so expand the _“events”_ collection, and
   - Press New Document, type
 ```javascript
