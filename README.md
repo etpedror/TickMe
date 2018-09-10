@@ -181,7 +181,9 @@ Finally, lets create the Key Vault
 10. Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-DatabaseName`_, set the Value to _`<Database created on Azure Cosmos DB>`_ and press __Create__
 11.	Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-EndpointUri`_, set the Value to _`<URI of the Azure Cosmos DB>`_ and press __Create__
 12.	Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-PrimaryKey`_, set the Value to _`<Primary Key of the Azure Cosmos DB>`_ and press __Create__
+
 With this, the Azure setup is done for now.
+
 ---
 ### ON YOUR WORKSTATION
 You will need to obtain the source code from Git Hub. 
