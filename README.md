@@ -40,7 +40,7 @@ This application needs to be registered on the [Microsoft Application Registrati
 3. Provide a Name for your application and click __Create__
 4. On the registration page, copy the value of _Application Id_. You will use it to configure your Microsoft account as an identity provider in your tenant.
 5. Select __Add platform__, and then and choose __Web__.
-6. Enter _`https://{tenant}.b2clogin.com/te/{tenant}.onmicrosoft.com/oauth2/authresp`_ in Redirect URLs. Replace _{tenant}_ with your tenant's name (for example, contosob2c).
+6. Enter _`https://login.microsoftonline.com/te/{tenant}.onmicrosoft.com/oauth2/authresp`_ in Redirect URLs. Replace _{tenant}_ with your tenant's name (for example, contosob2c).
 7. Select __Generate New Password__ under __Application Secrets__. Copy the new password displayed on screen. You need it to configure a Microsoft account as an identity provider in your tenant. This password is an important security credential.
 8. Press __Save__
 
@@ -52,21 +52,22 @@ Back on the Azure Portal, make sure you're using the directory that contains you
 4.	Select __Identity provider type__, select __Microsoft Account__, and click __OK__.
 5.	Select __Set up this identity provider__ and enter the _`<Application Id>`_ that you recorded earlier as the __Client ID__ and enter the password that you recorded as the __Client secret__ of the Microsoft account application that you created earlier.
 6.	Click __OK__ and then click __Create__ to save your Microsoft account configuration.
-7.	Press __Applications__ and select __+ Add__. Give it a name and set __Web App/WebApi__ to __Yes__. Set __Allow Implicit Flow__ to __Yes__. Type _`https://localhost`_ as the __Reply Url__
-8.	Once the application is created on Azure AD B2C, select it and add the following __Reply URLs__ (you might need to go back here and update the url to reflect the port choice of your application):
+7.	Press __Applications__ and select __+ Add__. Give it a name and set __Web App/WebApi__ to __Yes__. Set __Allow Implicit Flow__ to __Yes__. Type _`https://localhost:44391`_ as the __Reply Url__
+8. Once the application is created on Azure AD B2C, make a note of the ApplicationID. 
+9. Select it and add the following __Reply URLs__ (you might need to go back here and update the url to reflect the port choice of your application):
 
     - `https://localhost:44391/signin/b2c_1_edit_profile`
     - `https://localhost:44391/signin/b2c_1_sign_up_in`
     - `https://localhost:44391/signin/b2c_1_sign_in`
     - `https://localhost:44391/signin/b2c_1_sign_up`
   
-9.	Press __Save__
-10.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up_in`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
-11.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_edit_profile`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_edit_profile`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
-12.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
-13.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_in`_, set the domain to _`login.microsoftonline.com`_ and press __Create__
-14.	Choose __All services__ in the top-left corner of the Azure portal, search for and select __Azure Active Directory__
-15.	Create a user that will allow you to test your application
+10.	Press __Save__
+11.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up_in`_, set the domain to _`login.microsoftonline.com`_, select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades and press __Create__
+12.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_edit_profile`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_edit_profile`_, set the domain to _`login.microsoftonline.com`_, select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades and press __Create__
+13.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_up`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up`_, set the domain to _`login.microsoftonline.com`_, select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades and press __Create__
+14.	Press __Sign-up or sign-in policies__, press __+ Add__, set the name to _`B2C_1_sign_in`_, select the application that you just created, set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_in`_, set the domain to _`login.microsoftonline.com`_, select the Display Name, Given Name and Surname on the __Application Claims__ blade and press __Create__
+15.	Choose __All services__ in the top-left corner of the Azure portal, search for and select __Azure Active Directory__
+16.	Create a user that will allow you to test your application
 
 #### Register your Application with Azure AD
 
@@ -176,11 +177,13 @@ Finally, lets create the Key Vault
 5. Give it a name, select the subscription and under Resource Group, select __Use existing__ and on the drop down, select the resource group that was created previously. Don’t forget to set the Location to the appropriate value, but you can leave the other options with the defaults
 6. Once the KeyVault is created, select __Access Policies__ and press __+ Add__
 7. On __Select Principal__, select the __App Registration__ you created previously
-8. On __Secret permissions__, check only the __Get__ option
+8. On __Secret permissions__, check only the __Get__ and __List__ options
 9. Leave all the other options as they are and press __OK__
 10. Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-DatabaseName`_, set the Value to _`<Database created on Azure Cosmos DB>`_ and press __Create__
 11.	Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-EndpointUri`_, set the Value to _`<URI of the Azure Cosmos DB>`_ and press __Create__
 12.	Select Secrets and press __+ Generate/Import__, on the Name, type _`DataStore-PrimaryKey`_, set the Value to _`<Primary Key of the Azure Cosmos DB>`_ and press __Create__
+13.	Select Secrets and press __+ Generate/Import__, on the Name, type _`Auth-ClientId`_, set the Value to _`<ApplicationID registered on Azure B2C>`_ and press __Create__
+14.	Select Secrets and press __+ Generate/Import__, on the Name, type _`Auth-TenantName`_, set the Value to _`<tenant name of your Azure B2C>`_ and press __Create__
 
 With this, the Azure setup is done for now.
 
@@ -205,6 +208,14 @@ On the project TickMe, we will need to set some values on the __appsettings.json
     "ClientSecret": "<The ClientSecret defined previously>"
   }
 ```
-You should now be able to run the application and login, as well as see the events and buy tickets.
+
+Run the application! You should be able to see the entry page, but should get a redirect error on login. That is related to the port that your website binds to for https. By now, your URL should look like _`https://localhost:{port}`_. You need to go back to your __Azure AD B2C__ setup and edit the urls so that they have the correct port. In my case, the url is _`https://localhost:44391`_ so I would need to update the urls to 
+
+    - `https://localhost:44391/signin/b2c_1_edit_profile`
+    - `https://localhost:44391/signin/b2c_1_sign_up_in`
+    - `https://localhost:44391/signin/b2c_1_sign_in`
+    - `https://localhost:44391/signin/b2c_1_sign_up`
+    
+Once you do it, you should be able to run the application and login, as well as see the events and buy tickets.
 
 Proceed to the [Second Part of this Workshop](https://github.com/etpedror/TickMeMicroservices), where we will turn this application into a Microservices oriented application
