@@ -95,7 +95,7 @@ Create a Resource Group
    - URI
    - PrimaryKey
 8. Press __Data Explorer__ and select __New Database__. Type a name and make a note of it as you will need it later.
-9. Click __...__ that shows up when you move the mouse over the newly created database and select New Collection. Type _`events`_ in the __Collection Id__ field, leave all other values as they are and press __OK__. This Collection needs to be populated with some data, so expand the _“events”_ collection, and
+9. Click __...__ that shows up when you move the mouse over the newly created database and select New Collection. Type _`events`_ in the __Collection Id__ field, make sure you select __Fixed Size__ and press __OK__. This Collection needs to be populated with some data, so expand the _“events”_ collection, and
   - Press New Document, type
 ```javascript
 {
@@ -162,8 +162,8 @@ And press __Save__
 ```
 And press __Save__
 
-10.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _`user`_ in the __Collection Id__ field, leave all other values as they are and press __OK__
-11.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _`tickets`_ in the __Collection Id__ field, leave all other values as they are and press __OK__
+10.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _`user`_ in the __Collection Id__ field, make sure you select __Fixed Size__ and press __OK__
+11.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _`tickets`_ in the __Collection Id__ field, make sure you select __Fixed Size__ and press __OK__
 
 #### Creating the KeyVault
 Finally, lets create the Key Vault
