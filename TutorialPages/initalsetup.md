@@ -56,5 +56,5 @@ Key Vault
 ```
 
 
-[Next Step - Setting Things Up](createazurepart.md)  
+[Next Step - Setting Things Up](./createazurepart.md)  
 [Back to Start](../README.md)

@@ -8,13 +8,12 @@ The initial steps are creating the necessary resources on your Azure subscriptio
 You’ll need to access your azure subscription and follow the steps below
 
 [Create Azure AD B2C](#azure-ad-b2c)  
-[Register an App in the Microsoft Application Registration Portal](#Register-in-the-Microsoft-Application-Registration-Portal)  
-[Configure Azure AD B2C](#Configure-Azure-AD-B2C)  
-[Register your Application with Azure AD](#Register-your-Application-with-Azure-AD)  
-[Creating the Resource Group](#Creating-the-Resource-Group)  
+[Register an App in the Microsoft Application Registration Portal](#register-in-the-microsoft-application-registration-portal)  
+[Configure Azure AD B2C](#configure-azure-ad-b2c)  
+[Register your Application with Azure AD](#register-your-application-with-azure-ad)  
+[Creating the Resource Group](#creating-the-resource-group)  
 [Create the Azure Cosmos DB instance](#Create-the-Azure-Cosmos-DB-instance)  
-
-[Creating the KeyVault](#Creating-the-KeyVault)
+[Creating the KeyVault](#creating-the-keyvault)
 
 ---
 
@@ -34,7 +33,7 @@ An Azure AD B2C needs to be created to authenticate to the application (this wil
 
   6. Press __Create__  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -58,7 +57,7 @@ This application needs to be registered on the [Microsoft Application Registrati
 
 8. Press __Save__
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -138,7 +137,7 @@ Back on the Azure Portal, make sure you're using the directory that contains you
 
    3.10. Create a user that will allow you to test your application  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -164,7 +163,7 @@ We need to register the application with Azure AD in order for the application t
       - select a duration and press __Save__
       - Copy the value of the key to your file and save it as AAD.ClientSecret, as you will need it later and it won't be shown to you again later (if you forget to do it or if you lose it, you can later delete the key and recreate it)  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -184,7 +183,7 @@ Create a Resource Group
 
 6. Press __Create__ to create the Resource Group  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -277,7 +276,7 @@ Create a Resource Group
 
 12.	Click __...__ that shows up when you move the mouse over the database and select __New Collection__. Type _`tickets`_ in the __Collection Id__ field, make sure you select __Fixed Size__ and press __OK__  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 ---
 
@@ -324,10 +323,10 @@ Finally, lets create the Key Vault
     - set the Value to _`B2C.Domain`_
     - press __Create__  
 
-[Back to top](#Creating-the-Azure-Items)
+[Back to top](#creating-the-azure-items)
 
 With this, the Azure setup is done for now.
 
-[Previous Step - Initial Setup](initialsetup.md)  
-[Next Step - Prepare your Workstation](createazurepart.md)  
+[Previous Step - Initial Setup](./initialsetup.md)  
+[Next Step - Prepare your Workstation](./prepareworkstation.md)  
 [Back to Start](../README.md)
