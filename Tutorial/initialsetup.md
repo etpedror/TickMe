@@ -1,4 +1,4 @@
-# INITIAL SETUP
+# Initial Setup
 
 The application runs on Azure, in a webapp, or on your local machine during development, using Azure AD for authentication, CosmosDB to store data and KeyVault to store secrets. As part of the development team, the first step is to recreate the environment.
 Your workstation should have installed:
