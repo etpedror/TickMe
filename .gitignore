@@ -263,3 +263,8 @@ __pycache__/
 # Local Settings Files
 **/appsettings.json
 **/appsettings.Development.json
+Certificate/csr.pem
+Certificate/https.config
+Certificate/https.crt
+Certificate/key.pem
+Certificate/password.txt

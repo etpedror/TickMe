@@ -29,6 +29,7 @@ namespace TickMe
                         builtConfig["KeyVault:ClientId"],
                         builtConfig["KeyVault:ClientSecret"]);
                 })
+                .UseKestrel(options => options.ConfigureEndpoints())
                 .UseStartup<Startup>();
         }
     }
