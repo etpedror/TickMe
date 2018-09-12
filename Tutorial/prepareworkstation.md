@@ -139,7 +139,7 @@ There is no centralized way of trusting the a certificate on Linux so you can do
 
 Run the following command:
 
-- _sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain https.crt_
+_`sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain https.crt`_
 
 Some browsers, such as Chrome, require you to restart them before this trust will take affect.
 
@@ -279,12 +279,12 @@ To configure your endpoints and HTTPS settings on Windows you could then put the
         "Endpoints":{
             "Http":{
                 "Host": "localhost",
-                "Port": 8080,
+                "Port": 50080,
                 "Scheme": "http"
             },
             "Https":{
                 "Host": "localhost",
-                "Port": 44340,
+                "Port": 44380,
                 "Scheme": "https",
                 "StoreName": "My",
                 "StoreLocation": "CurrentUser"
@@ -304,14 +304,14 @@ On Linux or Mac your appsettings.Development.json would look something like this
         "Endpoints":{
             "Http":{
                 "Host": "localhost",
-                "Port": 8080,
+                "Port": 50080,
                 "Scheme": "http"
             },
             "Https":{
                 "Host": "localhost",
-                "Port": 44340,
+                "Port": 44380,
                 "Scheme": "https",
-                "FilePath": "/path/to/certificate.pfx"
+                "FilePath": "./Certificate/https.pfx"
             }
         }
     }
