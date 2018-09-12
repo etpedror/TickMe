@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TickMe", "TickMe\TickMe.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TickMeHelpers", "TickMeHelpers\TickMeHelpers.csproj", "{AE203806-9112-4A6D-9FB4-B3C81DB1FA66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMe", "TestMe\TestMe.csproj", "{92857625-C399-4643-8DD9-06A9B318F87A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +21,6 @@ Global
 		{AE203806-9112-4A6D-9FB4-B3C81DB1FA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE203806-9112-4A6D-9FB4-B3C81DB1FA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE203806-9112-4A6D-9FB4-B3C81DB1FA66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92857625-C399-4643-8DD9-06A9B318F87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92857625-C399-4643-8DD9-06A9B318F87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92857625-C399-4643-8DD9-06A9B318F87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92857625-C399-4643-8DD9-06A9B318F87A}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
