@@ -7,7 +7,7 @@ The initial steps are creating the necessary resources on your Azure subscriptio
 
 You’ll need to access your azure subscription and follow the steps below
 
-[Create Azure AD B2C](#Azure-AD-B2C)  
+[Create Azure AD B2C](#azure-ad-b2c)  
 [Register an App in the Microsoft Application Registration Portal](#Register-in-the-Microsoft-Application-Registration-Portal)  
 [Configure Azure AD B2C](#Configure-Azure-AD-B2C)  
 [Register your Application with Azure AD](#Register-your-Application-with-Azure-AD)  
