@@ -12,7 +12,7 @@ You’ll need to access your azure subscription and follow the steps below
 [Configure Azure AD B2C](#configure-azure-ad-b2c)  
 [Register your Application with Azure AD](#register-your-application-with-azure-ad)  
 [Creating the Resource Group](#creating-the-resource-group)  
-[Create the Azure Cosmos DB instance](#Create-the-Azure-Cosmos-DB-instance)  
+[Create the Azure Cosmos DB instance](#create-the-azure-cosmos-db-instance)  
 [Creating the KeyVault](#creating-the-keyvault)
 
 ---
@@ -326,6 +326,8 @@ Finally, lets create the Key Vault
 [Back to top](#creating-the-azure-items)
 
 With this, the Azure setup is done for now.
+
+---
 
 [Previous Step - Initial Setup](./initialsetup.md)  
 [Next Step - Prepare your Workstation](./prepareworkstation.md)  

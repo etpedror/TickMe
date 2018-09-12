@@ -3,7 +3,7 @@
 The application runs on Azure, in a webapp, or on your local machine during development, using Azure AD for authentication, CosmosDB to store data and KeyVault to store secrets. As part of the development team, the first step is to recreate the environment.
 Your workstation should have installed:
 
-- __Microsoft Visual Studio 2017__, with the options to develop for the web development enabled. It can be downloaded from [https://visualstudio.microsoft.com](https://visualstudio.microsoft.com);
+- __Microsoft Visual Studio 2017__ or __Viual Studio Code__, with the options to develop for the web development enabled. It can be downloaded from [https://visualstudio.microsoft.com](https://visualstudio.microsoft.com);
 - __Microsoft .Net Core SDK__, the latest version, that can be obtained from [https://www.microsoft.com/net/download](https://www.microsoft.com/net/download);
 - __Docker__, the selected container solution, which you can download from [https://www.docker.com/get-started](https://www.docker.com/get-started);
 - __Git for Windows__, obtainable from [https://git-scm.com/download/win](https://git-scm.com/download/win). While not strictly necessary, it makes things easier.
@@ -55,6 +55,7 @@ Key Vault
 
 ```
 
+---
 
 [Next Step - Setting Things Up](./createazurepart.md)  
 [Back to Start](../README.md)
