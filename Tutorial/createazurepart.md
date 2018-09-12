@@ -84,16 +84,16 @@ Back on the Azure Portal, make sure you're using the directory that contains you
       - Give it a name (save it in your text file as B2C.Application Name)
       - set __Web App/WebApi__ to __Yes__
       - Set __Allow Implicit Flow__ to __Yes__
-      - Type _`https://localhost:44391`_ as the __Reply Url__ (you might need to go back here later and update the url to reflect the port choice of your application)  
+      - Type _`https://localhost:44380`_ as the __Reply Url__ (you might need to go back here later and update the url to reflect the port choice of your application)  
 
    3.2. Once the application is created on Azure AD B2C, make a note of the ApplicationID  
 
    3.3. Select it and add the following __Reply URLs__ (you might need to go back here later and update the url to reflect the port choice of your application):
 
-    - `https://localhost:44391/signin/b2c_1_edit_profile`
-    - `https://localhost:44391/signin/b2c_1_sign_up_in`
-    - `https://localhost:44391/signin/b2c_1_sign_in`
-    - `https://localhost:44391/signin/b2c_1_sign_up`
+    - `https://localhost:44380/signin/b2c_1_edit_profile`
+    - `https://localhost:44380/signin/b2c_1_sign_up_in`
+    - `https://localhost:44380/signin/b2c_1_sign_in`
+    - `https://localhost:44380/signin/b2c_1_sign_up`
   
    3.4. Press __Save__  
 
@@ -101,7 +101,7 @@ Back on the Azure Portal, make sure you're using the directory that contains you
       - press __+ Add__
       - set the name to _`B2C_1_sign_up_in`_
       - select the application that you just created (You should have saved the name as B2C.ApplicationName)
-      - set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up_in`_
+      - set the __Reply url__ to _`https://localhost:44380/signin/b2c_1_sign_up_in`_
       - set the domain to _`login.microsoftonline.com`_
       - select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades
       - press __Create__  
@@ -110,7 +110,7 @@ Back on the Azure Portal, make sure you're using the directory that contains you
       - press __+ Add__
       - set the name to _`B2C_1_edit_profile`_
       - select the application that you just created (You should have saved the name as B2C.ApplicationName)
-      - set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_edit_profile`_
+      - set the __Reply url__ to _`https://localhost:44380/signin/b2c_1_edit_profile`_
       - set the domain to _`login.microsoftonline.com`_
       - select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades  
       - press __Create__  
@@ -119,7 +119,7 @@ Back on the Azure Portal, make sure you're using the directory that contains you
       - press __+ Add__
       - set the name to _`B2C_1_sign_up`_
       - select the application that you just created (You should have saved the name as B2C.ApplicationName)
-      - set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_up`_
+      - set the __Reply url__ to _`https://localhost:44380/signin/b2c_1_sign_up`_
       - set the domain to _`login.microsoftonline.com`_
       - select the Display Name, Given Name and Surname on the __Profile Attributes__ and __Application Claims__ blades
       - press __Create__  
@@ -128,7 +128,7 @@ Back on the Azure Portal, make sure you're using the directory that contains you
       - press __+ Add__
       - set the name to _`B2C_1_sign_in`_
       - select the application that you just created (You should have saved the name as B2C.ApplicationName)
-      - set the __Reply url__ to _`https://localhost:44391/signin/b2c_1_sign_in`_
+      - set the __Reply url__ to _`https://localhost:44380/signin/b2c_1_sign_in`_
       - set the domain to _`login.microsoftonline.com`_
       - select the Display Name, Given Name and Surname on the __Application Claims__ blade
       - press __Create__  

@@ -53,6 +53,9 @@ Cosmos DB
 Key Vault
 - KeyVault.Name:
 
+##################################################
+Certificate
+PFX.Password:
 ```
 
 ---
