@@ -33,6 +33,8 @@ An Azure AD B2C needs to be created to authenticate to the application (this wil
 
   6. Press __Create__  
 
+![Create an Azure AD B2C](./pictures/create_aad_b2c.png)
+
 [Back to top](#creating-the-azure-items)
 
 ---
@@ -47,6 +49,8 @@ This application needs to be registered on the [Microsoft Application Registrati
 
 3. Provide a Name for your application and click __Create__  
 
+![Register an app with Microsoft Application Portal](./pictures/create_msa_app.png)
+
 4. On the registration page, copy the value of _Application Id_ and make a note of it on your text document, as MSA.ApplicationID. You will use it to configure your Microsoft account as an identity provider in your tenant  
 
 5. Select __Add platform__, and then and choose __Web__  
@@ -56,6 +60,8 @@ This application needs to be registered on the [Microsoft Application Registrati
 7. Select __Generate New Password__ under __Application Secrets__. Copy the new password displayed on screen to your text file as MSA.ApplicationSecret (you need it to configure a Microsoft account as an identity provider in your tenant)  
 
 8. Press __Save__
+
+![Configure an app on Microsoft Application Portal](./pictures/configure_msa_app.png)
 
 [Back to top](#creating-the-azure-items)
 
@@ -96,6 +102,8 @@ Back on the Azure Portal, make sure you're using the directory that contains you
     - `https://localhost:44380/signin/b2c_1_sign_up`
   
    3.4. Press __Save__  
+
+![Configure Azure AD B2C](./pictures/configure_adb2c_app.png)
 
    3.5. Press __Sign-up or sign-in policies__  
       - press __+ Add__
@@ -151,17 +159,19 @@ We need to register the application with Azure AD in order for the application t
 
 2. Press __App Registrations__ and select __+ New application registration__ on the options  
 
-3. Give your application a name (save it in your file as AAD.Name), set the type to _"Web app / API”_ and set the Sign-on URL to _'http://localhost'_. 
+3. Give your application a name (save it in your file as AAD.Name), set the type to _"Web app / API”_ and set the Sign-on URL to _'http://localhost'_
 
 4. Once the application is saved, copy the Application ID into your file and save it as AAD.ApplicationID
 
-4. Access the __App registration__
+5. Access the __App registration__
    - select __Settings__
    - press __Keys__
    - on the __Passwords__ sections 
       - create a new key with the name _'ClientSecret'_
       - select a duration and press __Save__
       - Copy the value of the key to your file and save it as AAD.ClientSecret, as you will need it later and it won't be shown to you again later (if you forget to do it or if you lose it, you can later delete the key and recreate it)  
+
+![Configure Azure AD App](./pictures/configure_aad_app.png)
 
 [Back to top](#creating-the-azure-items)
 
