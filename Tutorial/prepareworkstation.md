@@ -311,7 +311,7 @@ On Linux or Mac your appsettings.Development.json would look something like this
                 "Host": "localhost",
                 "Port": 44380,
                 "Scheme": "https",
-                "FilePath": "./Certificate/https.pfx"
+                "FilePath": "../Certificate/https.pfx"
             }
         }
     }

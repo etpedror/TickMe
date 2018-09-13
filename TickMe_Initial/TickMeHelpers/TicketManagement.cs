@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TickMeHelpers
@@ -20,6 +21,9 @@ namespace TickMeHelpers
 
         public async Task<Ticket> IssueEventTicket(Guid eventId, Guid userId, decimal pricePaid, string paymentData)
         {
+            // We will simulate a request to our ticket issuing service by delaying for 10 seconds
+            Thread.Sleep(10000); 
+
             var eventManager = new EventManagement(_configuration);
             var evnt = await eventManager.Get(eventId);
             if(evnt == null || evnt.TotalAvailableTickets < 1)

@@ -15,12 +15,12 @@ namespace TickMe.Controllers
 {
     public class EventController : Controller
     {
-        private IConfiguration Configuration = null;
         public EventController(IConfiguration config) : base()
         {
             Configuration = config;
         }
-
+        private readonly IConfiguration Configuration = null;
+        
         private EventManagement EventManager
         {
             get
@@ -62,19 +62,32 @@ namespace TickMe.Controllers
             var viewModel = new List<MyEventsViewModel>();
 
             var user = TickMeHelpers.User.FromUser(User);
-            var savedUser = await UserManager.GetUserByAuthId(user);
+            var savedUser = await UserManager.GetOrCreateUserByAuthId(user);
             var tickets = await TicketManager.GetUserTickets(savedUser.Id);
             foreach(var ticket in tickets)
             {
                 var evnt = await EventManager.Get(ticket.EventId);
-                dynamic pdata = JObject.Parse(JsonConvert.DeserializeObject<PaymentData>(ticket.PaymentData).TransactionData);
+                var paymentData = $"No payment data available";
+                if(ticket.PaymentData !=null)
+                {
+                    var payData = JsonConvert.DeserializeObject<PaymentData>(ticket.PaymentData);
+                    if (payData != null && !String.IsNullOrWhiteSpace(payData.TransactionData))
+                    {
+                        dynamic pdata = JObject.Parse(payData.TransactionData);
+                        if (pdata != null)
+                        {
+                            paymentData = pdata.TransactionDate;
+                        }
+                    }
+                }
+                
                 var item = new MyEventsViewModel
                 {
                     Ticket = ticket,
                     EventName = evnt.Title,
                     StartMoment = evnt.StartMoment,
                     Duration = evnt.Duration,
-                    PaymentDate = pdata.TransactionDate
+                    PaymentDate = paymentData
                 };
                 viewModel.Add(item);
             }
@@ -100,7 +113,7 @@ namespace TickMe.Controllers
         private async Task<TicketBuyViewModel> PrepareTicketBuyViewModel(Guid id)
         {
             var user = TickMeHelpers.User.FromUser(User);
-            var savedUser = await UserManager.GetUserByAuthId(user);
+            var savedUser = await UserManager.GetOrCreateUserByAuthId(user);
             if (savedUser == null)
             {
                 user.Id = Guid.NewGuid();
@@ -120,7 +133,7 @@ namespace TickMe.Controllers
         private async Task<TicketBuyViewModel> PrepareTicketBuyViewModelForExistingTicket(Guid id)
         {
             var user = TickMeHelpers.User.FromUser(User);
-            var savedUser = await UserManager.GetUserByAuthId(user);
+            var savedUser = await UserManager.GetOrCreateUserByAuthId(user);
             if (savedUser == null)
             {
                 user.Id = Guid.NewGuid();
@@ -164,7 +177,7 @@ namespace TickMe.Controllers
                 buyModel.paymentData = paymentData;
                 if (buyModel.user.Id == Guid.Empty)
                 {
-                    buyModel.user = await UserManager.GetUserByAuthId(buyModel.user);
+                    buyModel.user = await UserManager.GetOrCreateUserByAuthId(buyModel.user);
                 }
                 if (paymentData.TransactionSuccessful)
                 {
